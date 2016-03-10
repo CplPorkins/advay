@@ -1,5 +1,5 @@
 /*======================================
-Ruochong Wu
+Advay - Lorenz Vargas and Ruochong Wu
 APCS2 Pd10
 HW9 -- Mergers and Acquisitions...
 2016-03-06
