@@ -1,4 +1,4 @@
-//Team PC Master Race - Ruochong Wu, Lorenz Vargas
+//Team Advay - Ruochong Wu, Lorenz Vargas
 //APCS2 PD10
 //HW11 -- Wrapping It Up
 //2016-03-09
