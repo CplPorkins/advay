@@ -51,6 +51,13 @@ public class MergeSortTester
      ******************************/
     public static void main( String[] args ) 
     {
+	int[] test = new int[100000000];
+	for (int count = 0 ; count < test.length; count++){
+	    test[count] = (int)(Math.random()*100000000);
+	}
+	long before = System.currentTimeMillis();
+        MergeSort.sort(test);
+	System.out.println(System.currentTimeMillis()-before);
 
     }//end main
 
