@@ -1,4 +1,4 @@
-//Team PC Master Race - Ruochong Wu, Lorenz Vargas
+//Team Advay - Ruochong Wu, Lorenz Vargas
 //APCS2 PD10
 //HW11 -- Wrapping It Up
 //2016-03-09
@@ -8,7 +8,7 @@
   class MergeSortTester
 
   ALGORITHM:
- 1. If only 1 card, return card.
+1. If only 1 card, return card.
 2. If more than 1 card, split the deck in any way and pass each half to another instance of this function.
 3. Return the value of the "Merge" helper function (compare top of two stacks of cards, put away smaller card, repeat) taking the value of the 2 instances created in step 2.
 
@@ -51,6 +51,26 @@ public class MergeSortTester
      ******************************/
     public static void main( String[] args ) 
     {
+	//Number x following test indicates 1 x 10^x array length filled with random numbers from 0 to 1000
+	//int[] test0 = new int[1];
+	//int[] test1 = new int[10];
+	//int[] test2 = new int[100];
+	//int[] test3 = new int[1000];
+	//int[] test4 = new int[10000];
+	//int[] test5 = new int[100000];
+	//int[] test6 = new int[1000000];
+	int[] test7 = new int[10000000];
+	//MEM ERROR int[] test8 = new int[100000000];
+	/* Ye Olde Testing Bar			
+	*/	
+
+	
+	for (int count = 0 ; count < test7.length; count++){
+	    test7[count] = (int)(Math.random()*1000);
+	}
+	long before = System.currentTimeMillis();
+        MergeSort.sort(test7);
+	System.out.println(System.currentTimeMillis()-before);
 
     }//end main
 

@@ -8,7 +8,7 @@
   class MergeSortTester
 
   ALGORITHM:
- 1. If only 1 card, return card.
+1. If only 1 card, return card.
 2. If more than 1 card, split the deck in any way and pass each half to another instance of this function.
 3. Return the value of the "Merge" helper function (compare top of two stacks of cards, put away smaller card, repeat) taking the value of the 2 instances created in step 2.
 
@@ -29,15 +29,23 @@ The merge phase is basically the split phase run in reverse. It begins with n li
 Adding the two phases together Merge Sort has a Big O of O(n logn).
 
   Mean execution times for dataset of size n:
-  Batch size: <# of times each dataset size was run>
-  n=1       time: 
-  n=10      time: 
-  n=100     time: 
-  ...
-  n=<huge>  time: 
+  Batch size: 10
+  Time in milliseconds
+  n=1       time: 0.4
+  n=10      time: 0.4
+  n=100     time: 0.7
+  n=1000     time: 0.8
+  n=10000     time: 2.1
+  n=100000     time: 17.1
+  n=1000000     time: 166.2
+  n=10000000     time: 1785.2
+  n=100000000     time: OutOfMemory Exception
 
   ANALYSIS:
-  <INSERT YOUR RESULTS ANALYSIS HERE>
+  The difference in runtimes among smaller arrays, even if they are orders of ten apart, is negligible. This holds true until the array length reaches 1 x 10^5.
+  Every order of ten after that reveals runtimes that are similarly approximately orders of ten apart.
+  This trend continues until my computer runs out of memory when the array reaches a length of 1 x 10^8 (further proving mergesort to be inefficient spacewise).
+  The fact that the runtimes are orders of ten apart as the array lengths are proves that mergesort runs in close to linear time. More precisely, it runs in O(n log n) time, the fastest a sort algorithm can go.
   ======================================*/
 
 public class MergeSortTester 
@@ -51,12 +59,25 @@ public class MergeSortTester
      ******************************/
     public static void main( String[] args ) 
     {
-	int[] test = new int[100000000];
-	for (int count = 0 ; count < test.length; count++){
-	    test[count] = (int)(Math.random()*100000000);
+	//Number x following test indicates 1 x 10^x array length filled with random numbers from 0 to 1000
+	//int[] test0 = new int[1];
+	//int[] test1 = new int[10];
+	//int[] test2 = new int[100];
+	//int[] test3 = new int[1000];
+	//int[] test4 = new int[10000];
+	//int[] test5 = new int[100000];
+	//int[] test6 = new int[1000000];
+	int[] test7 = new int[10000000];
+	//MEM ERROR int[] test8 = new int[100000000];
+	/* Ye Olde Testing Bar			
+	*/	
+
+	
+	for (int count = 0 ; count < test7.length; count++){
+	    test7[count] = (int)(Math.random()*1000);
 	}
 	long before = System.currentTimeMillis();
-        MergeSort.sort(test);
+        MergeSort.sort(test7);
 	System.out.println(System.currentTimeMillis()-before);
 
     }//end main
